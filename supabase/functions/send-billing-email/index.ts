@@ -36,7 +36,7 @@ interface WebhookPayload {
   schema: string;
 }
 
-serve(async (req) => {
+serve(async (req: Request) => {
   try {
     // Parse the webhook payload from Supabase.
     const payload: WebhookPayload = await req.json();
@@ -108,11 +108,12 @@ serve(async (req) => {
     );
 
   } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     console.error('[BillingEmail] Error in function:', error);
     return new Response(
       JSON.stringify({ 
         error: 'Internal server error', 
-        message: error.message 
+        message: errorMessage 
       }),
       { status: 500, headers: { 'Content-Type': 'application/json' } }
     );

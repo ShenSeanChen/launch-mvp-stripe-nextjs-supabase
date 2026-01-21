@@ -8,7 +8,7 @@
 -- 
 -- YOUR_SUPABASE_PROJECT_REF
 --    → Find at: Supabase Dashboard → Project Settings → General → Reference ID
---    → Example: lnznhclnbeujbicjeosk
+--    → Example: abcdefghijklmnopqrst
 --
 -- ============================================================================
 

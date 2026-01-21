@@ -46,17 +46,24 @@ A production-ready Next.js template featuring authentication, dark mode support,
 
 1. Clone the template:
 
+**Option A: Use GitHub's Template Feature (Easiest)**
+- Click the green **"Use this template"** button on GitHub
+- This creates a fresh repo with clean history
+
+**Option B: Clone and Start Fresh (Recommended for production)**
 ```bash
-git clone https://github.com/ShenSeanChen/launch-stripe-nextjs-supabase my-full-stack-app
+git clone https://github.com/ShenSeanChen/launch-mvp-stripe-nextjs-supabase my-full-stack-app
 cd my-full-stack-app
-rm -rf .git
-git init
+rm -rf .git              # Remove template's git history
+git init                 # Start fresh with your own history
 git add .
-git commit -m "Initial commit"
-# git remote add origin https://github.com/ShenSeanChen/my-full-stack-app.git
-git remote add origin https://github.com/USE_YOUR_OWN_GITHUB_NAME/my-full-stack-app.git
+git commit -m "Initial commit from LaunchMVP template"
+git remote add origin https://github.com/YOUR_USERNAME/my-full-stack-app.git
 git push -u origin main
 ```
+
+**Option C: Fork (For contributors or to receive updates)**
+- Click **"Fork"** on GitHub to maintain connection to this template
 
 2. Install dependencies:
 ```bash

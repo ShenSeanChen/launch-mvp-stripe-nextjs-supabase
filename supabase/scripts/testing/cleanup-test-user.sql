@@ -14,7 +14,7 @@
 
 DO $$
 DECLARE
-    test_email TEXT := 'shenseanchen.dev@gmail.com';
+    test_email TEXT := 'shenseanchen.test.0@gmail.com';
     test_user_id UUID;
     deletion_count INTEGER;
 BEGIN

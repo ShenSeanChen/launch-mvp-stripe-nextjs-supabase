@@ -261,7 +261,7 @@ supabase login
 
 # Link to your project
 # Find your project ref at: Supabase Dashboard → Project Settings → General → Reference ID
-supabase link --project-ref lnznhclnbeujbicjeosk
+supabase link --project-ref YOUR_PROJECT_REF
 
 # Set secrets for Edge Functions (these are DIFFERENT from Vercel env vars!)
 supabase secrets set APP_URL=https://my-full-stack-app-iota.vercel.app
@@ -287,7 +287,7 @@ Triggers watch for database changes and call the Edge Functions.
 
 1. Go to **Supabase Dashboard** → **SQL Editor**
 2. **IMPORTANT**: Open `supabase/scripts/setup/03-create-public-users-trigger.sql` and replace:
-   - `YOUR_SUPABASE_PROJECT_REF` → Your project reference (e.g., `lnznhclnbeujbicjeosk`)
+   - `YOUR_SUPABASE_PROJECT_REF` → Your project reference
    - `YOUR_SUPABASE_ANON_KEY` → Your anon key (find at Project Settings → API)
 3. Run the modified SQL
 4. Repeat for `supabase/scripts/setup/04-create-billing-cancellation-triggers.sql`

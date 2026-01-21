@@ -1,4 +1,8 @@
-import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
+// app/auth/callback/route.ts
+// Handles OAuth callback from Supabase authentication.
+// Uses the new @supabase/ssr package (replacing deprecated auth-helpers-nextjs).
+
+import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 
@@ -10,7 +14,26 @@ export async function GET(request: Request) {
 
   if (code) {
     console.log('AuthCallback: Exchanging code for session');
-    const supabase = createRouteHandlerClient({ cookies });
+    
+    const cookieStore = await cookies();
+    
+    const supabase = createServerClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      {
+        cookies: {
+          getAll() {
+            return cookieStore.getAll();
+          },
+          setAll(cookiesToSet) {
+            cookiesToSet.forEach(({ name, value, options }) => {
+              cookieStore.set(name, value, options);
+            });
+          },
+        },
+      }
+    );
+    
     const { error } = await supabase.auth.exchangeCodeForSession(code);
     
     if (error) {
@@ -30,4 +53,4 @@ export async function GET(request: Request) {
 
   console.log('AuthCallback: No code present, redirecting to login');
   return NextResponse.redirect(new URL('/login', requestUrl.origin));
-} 
+}

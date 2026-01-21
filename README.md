@@ -383,11 +383,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 X - [@ShenSeanChen](https://x.com/ShenSeanChen)
 
-YouTube - [@SeanTechStories](https://www.youtube.com/@SeanTechStories)
+YouTube - [@SeanAIStories](https://www.youtube.com/@SeanAIStories)
 
-Discord - [@Sean's Stories](https://discord.gg/TKKPzZheua)
+Discord - [@Sean's AI Stories](https://discord.gg/TKKPzZheua)
 
-Instagram - [@SeanTechStories](https://www.instagram.com/sean_tech_stories )
+Instagram - [@SeanAIStories](https://www.instagram.com/sean_ai_stories )
 
 Project Link: [https://github.com/ShenSeanChen/launch-stripe-nextjs-supabase](https://github.com/ShenSeanChen/launch-stripe-nextjs-supabase)
 

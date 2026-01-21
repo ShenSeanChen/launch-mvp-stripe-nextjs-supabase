@@ -11,6 +11,7 @@
   "dependencies": {
     "@floating-ui/react": "^0.27.4",
     "@headlessui/react": "^2.2.0",
+    "@react-email/components": "^1.0.6",
     "@stripe/mcp": "^0.2.1",
     "@stripe/stripe-js": "^5.5.0",
     "@supabase/auth-helpers-nextjs": "^0.10.0",
@@ -29,6 +30,7 @@
     "react-icons": "^5.4.0",
     "react-intersection-observer": "^9.15.1",
     "react-scroll": "^1.9.2",
+    "resend": "^6.8.0",
     "stripe": "^17.5.0"
   },
   "devDependencies": {

@@ -44,6 +44,7 @@ create table public.subscriptions (
   cancel_at_period_end boolean null default false,
   updated_at timestamp with time zone null default now(),
   current_period_end timestamp with time zone null,
+  stripe_event_created bigint null,
   constraint subscriptions_pkey primary key (id),
   constraint subscriptions_user_id_fkey foreign KEY (user_id) references users (id) on delete CASCADE
 ) TABLESPACE pg_default;

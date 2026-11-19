@@ -179,9 +179,12 @@ export const POST = withCors(async function POST(request: NextRequest) {
             status: subscription.status,
             cancel_at_period_end: subscription.cancel_at_period_end,
             current_period_end: new Date(subscription.current_period_end * 1000).toISOString(),
-            updated_at: new Date().toISOString()
+            updated_at: new Date().toISOString(),
+            stripe_event_created: event.created
           })
-          .eq('stripe_subscription_id', subscription.id);
+          .eq('stripe_subscription_id', subscription.id)
+          // Stripe does not guarantee order: ignore an event older than the stored one
+          .or(`stripe_event_created.is.null,stripe_event_created.lte.${event.created}`);
         
         break;
       }

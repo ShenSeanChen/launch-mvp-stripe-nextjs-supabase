@@ -600,3 +600,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 ---
 
 Made with 🔥 by [ShenSeanChen](https://github.com/ShenSeanChen)
+
+## Webhook concurrency test
+
+Payment providers can deliver webhook events late, twice, or out of order. `npm run test:race` runs the webhook's database writes in every possible order on a real Postgres with [VibeRaven](https://viberaven.dev) (`npx -y viberaven race`) and fails if any order breaks the rule in `race/webhook.race.json`. It also runs in `npm test`. Add a rule there when you add a webhook handler.
